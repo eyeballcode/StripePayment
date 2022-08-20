@@ -1,0 +1,7 @@
+config.yaml
+*.gem
+*.rbc
+/.bundle/
+/vendor/
+/bin/
+/lib/bundler/man/
