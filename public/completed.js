@@ -38,6 +38,9 @@ async function checkStatus() {
     case 'requires_payment_method':
       showMessage('Your payment was not successful, please try again.')
       break
+    case 'requires_action':
+      showMessage('Your payment was cancelled.')
+      break
     default:
       showMessage('Something went wrong.')
       break

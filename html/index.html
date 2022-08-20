@@ -20,8 +20,11 @@
           <div class='input-group-prepend'>
             <span class='input-group-text' id='basic-addon3'>SGD $</span>
           </div>
-          <input type='number' class='form-control' id='amount' step='0.01' min='0.5' required>
+          <input type='number' class='form-control' id='amount' step='0.01' min='0.5' placeholder='0.5' required>
         </div>
+        <small>Payment powered by
+        <a href="https://stripe.com">Stripe</a>
+      </small>
       </div>
       <button type='submit' class='btn btn-primary w-100' id='pay-now'>
         <div class='spinner-border spinner-border-sm d-none' role='status' id='spinner'>
