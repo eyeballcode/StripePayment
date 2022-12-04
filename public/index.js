@@ -31,7 +31,7 @@ async function onPayNowClicked() {
   const { clientSecret } = await (await fetch('/create-payment-intent', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ amount: 100 * parseFloat($('#amount').value) }),
+    body: JSON.stringify({ amount: Math.round(100 * parseFloat($('#amount').value)) }),
   })).json()
 
   elements = stripe.elements({
