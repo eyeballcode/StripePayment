@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <title>Acceping Payments</title>
+    <meta name='description' content='A demo of a payment on Stripe' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link rel='stylesheet' href='index.css' />
+    <link rel='stylesheet' href='bootstrap-4.6.1.min.css' />
+    <script src='https://js.stripe.com/v3/'></script>
+    <script src='cards.js' defer></script>
+  </head>
+  <body>
+    <!-- Display a payment form -->
+    <form class='centre-card' id='payment-form'>
+      <div class='form-group'>
+        <label for='amount'>Amount To Pay</label>
+        <div class='input-group mb-3'>
+          <div class='input-group-prepend'>
+            <span class='input-group-text' id='basic-addon3'>AUD $</span>
+          </div>
+          <input type='number' class='form-control' id='amount' step='0.01' min='0.5' placeholder='0.5' required>
+        </div>
+        <small>Payment powered by
+        <a href="https://stripe.com">Stripe</a>
+      </small>
+      </div>
+      <button type='submit' class='btn btn-primary w-100' id='pay-now'>
+        <div class='spinner-border spinner-border-sm d-none' role='status' id='spinner'>
+          <span class='sr-only'>Loading...</span>
+        </div>
+        <span id='button-text'>Pay with EFTPOS</span>
+      </button>
+    </form>
+    <div class='d-none' id='hidden-mount'>
+    </div>
+  </body>
+</html>

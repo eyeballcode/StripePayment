@@ -12,7 +12,7 @@ set :port, 8008
 set :bind, '0.0.0.0'
 
 get '/' do
-  send_file 'html/index.html'
+  send_file 'html/cards-new.html'
 end
 
 get '/completed' do
@@ -32,11 +32,15 @@ post '/create-payment-intent' do
   # Create a PaymentIntent with amount and currency
   payment_intent = Stripe::PaymentIntent.create(
     amount: data['amount'],
-    currency: 'sgd',
-    payment_method_types: ['paynow']
+    currency: 'aud',
+    payment_method_types: [
+      'card'
+    ],
+
   )
 
   {
-    clientSecret: payment_intent['client_secret']
+    clientSecret: payment_intent['client_secret'],
+    dpmCheckerLink: "https://dashboard.stripe.com/settings/payment_methods/review?transaction_id=#{payment_intent.id}"
   }.to_json
 end
