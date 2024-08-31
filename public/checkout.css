@@ -39,7 +39,7 @@ form {
   text-align: center;
 }
 
-#payment-element {
+#payment-element:has(~ #payment-amount.hidden) {
   margin-bottom: 24px;
 }
 
@@ -163,17 +163,6 @@ h2 {
   margin: 0;
   color: #30313D;
   text-align: center;
-}
-
-a {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: Arial, sans-serif;
-  display: block;
-}
-a:hover {
-  filter: contrast(120%);
 }
 
 #details-table {

@@ -34,9 +34,6 @@ async function initialize() {
 
   const paymentElement = elements.create("payment", paymentElementOptions);
   paymentElement.mount("#payment-element");
-
-  // [DEV] For demo purposes only
-  setDpmCheckerLink(dpmCheckerLink);
 }
 
 async function handleSubmit(e) {
@@ -101,8 +98,4 @@ function setLoading(isLoading) {
     document.querySelector("#spinner").classList.add("hidden");
     document.querySelector("#button-text").classList.remove("hidden");
   }
-}
-
-function setDpmCheckerLink(url) {
-  document.querySelector("#dpm-integration-checker").href = url;
 }

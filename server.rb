@@ -40,7 +40,6 @@ post '/create-payment-intent' do
   )
 
   {
-    clientSecret: payment_intent['client_secret'],
-    dpmCheckerLink: "https://dashboard.stripe.com/settings/payment_methods/review?transaction_id=#{payment_intent.id}"
+    clientSecret: payment_intent['client_secret']
   }.to_json
 end
